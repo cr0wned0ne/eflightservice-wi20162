@@ -5,6 +5,10 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * Entity for a Flight Resource.
+ *
+ */
 @Entity
 public class FlightEntity {
 	
