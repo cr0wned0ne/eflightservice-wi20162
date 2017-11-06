@@ -29,14 +29,14 @@ public class RestFlightController {
 	 * Save / update a given flight.
 	 * @param flug The flight to save / Update
 	 */
-	@RequestMapping(path = "api/flight", method = RequestMethod.PUT)
-	public String putFlight(@RequestParam String flightId, 
-			@RequestParam String destination, 
-			@RequestParam String origin, 
-			@RequestParam String destinationGate,
-			@RequestParam String originGate,
-			@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date startDate,
-			@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date endDate){
+	@RequestMapping(path = "api/flight", method = RequestMethod.POST)
+	public String postFlight(@RequestParam (value="flightId") String flightId, 
+			@RequestParam(value="destination") String destination, 
+			@RequestParam(value="origin") String origin, 
+			@RequestParam(value="destinationGate") String destinationGate,
+			@RequestParam(value="originGate") String originGate,
+			@RequestParam(value="startDate") @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date startDate,
+			@RequestParam(value="endDate") @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date endDate){
 		System.out.println(flightId);
 		FlightEntity flightEntity = new FlightEntity();
 		flightEntity.setFlightId(flightId);
@@ -46,7 +46,6 @@ public class RestFlightController {
 		flightEntity.setOriginGate(originGate);
 		flightEntity.setStartDate(startDate);
 		flightEntity.setEndDate(endDate);
-
 		flightRepo.save(flightEntity);
 		return "OK";
 	}
