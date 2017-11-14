@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Spring Boot Application main class for eFlightService.
+ * This class starts up the Spring Boot Application and the embedded Tomcat Webserver.
  *
  */
 @SpringBootApplication

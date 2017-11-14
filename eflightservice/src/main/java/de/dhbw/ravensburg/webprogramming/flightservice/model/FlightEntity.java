@@ -5,13 +5,20 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import de.dhbw.ravensburg.webprogramming.flightservice.repository.FlightRepository;
+
 /**
  * Entity for a Flight Resource.
- *
+ * The @Entity Annotation makes this class an entity so it can be persisted.
+ * When saving this Entity for the first time with the {@link FlightRepository} 
+ * a table with all required columns will be created automatically.
  */
 @Entity
 public class FlightEntity {
 	
+	/**
+	 * The primary key of a flight.
+	 */
 	@Id
 	private String flightId;
 	private String destination;
@@ -37,6 +44,8 @@ public class FlightEntity {
 		this.destinationGate = destinationGate;
 		this.originGate = originGate;
 	}
+	
+	// Getters and Setters
 	public String getFlightId() {
 		return flightId;
 	}
