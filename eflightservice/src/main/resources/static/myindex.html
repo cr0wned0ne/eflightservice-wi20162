@@ -1,65 +1,104 @@
 <!DOCTYPE html>
+<!-- Doctype specifies the type of document, 
+in this case we tell the browser it is a html document -->
 <html>
 <head>
+	<!-- The <head> tag defines metadata like a title, 
+	the used character-set, style information or links to other sources 
+	like css files -->
 	<meta charset="UTF-8">
 	<title>Hello World</title>
 </head>
 <body>
-
-<!-- This is a comment -->
+<!-- The <body> tag contains the actual content of the website-->
+<!-- This <a> tag functions as an anchor for an internal link 
+that will make the browser jump to this destination within this page. -->
 <a name="top"></a>
+
+<!-- h1 - h6 define different sizes of headings -->
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
 <h6>Heading 6</h6>
+
+<!-- <p> defines a Paragraph, a paragraph can contain text. 
+<br/> creates a line-break.
+-->
 <p>
+<!-- <u> underlines a text -->
 Hello <u>World!</u> <br/>
 And by!
 </p>
 
 <p>
+<!-- <b> makes a text bold, <b> is deprecated, we should use <strong> -->
 Hello <b>World!</b> <br/>
+<!-- <em> makes a text italic -->
 And <em>by</em>!
 </p>
 
 <h3>My favorite foods:</h3>
+<!-- <ul> creates an unordered list, listitems can be added with <li> and have a bulletpoint.-->
 <ul>
  <li>Pizza</li>
  <li>Burger</li>
 </ul>
 Todo List
 <ol>
+<!-- <ol> creates an ordered list (listitems have numbers) -->
 	<li>Learn Html</li>
 	<li>Get rich</li>
 </ol>
+
+<!-- For user input a <form> can be used, it can contain several 
+different <input> type fields. With the action parameter a location where
+the form should be submitted to can be specified (_blank opens it in a new tab).
+Also a method (POST/GET) can be specified.
+If the inputs have a "name" attribute, they will be available in the HTTP request via this name.
+-->
 <h3>Formular</h3>
-<form action="">
+<form action="_blank" method="GET">
+	<!-- type="text" is default, it can be used to input text. placeholder attribute adds a placeholder-->
 	<input name="firstname" type="text" placeholder="Firstname"/><br/><br/>
+	<!-- type="email" does already a built-in validation on email format pattern. -->
 	<input name="email" type="email" placeholder="Email"/><br/><br/>
+	<!-- dropdowns can be created with <select>, it must contain dropdown options with <option> -->
 	<select name="city">
 		<option>City</option>
 		<option>Stuttgart</option>
 		<option>Ravensburg</option>
 	</select>
+	<!-- radio buttons can be  created with type="radio", giving them a name, links two radio elements and makes only one selectable-->
 	<input type="radio" name="gender" value="male"/>male
 	<input type="radio" name="gender" value="female"/>female
 	<br><br>
+	<!-- <textarea>  are for larger areas of text-->
 	<textarea name="story" placeholder="Tell me your story.."></textarea>
+	<!-- the submit button sends the form to the backend -->
 	<input type="submit" value="Absenden"/>
 </form>
 <h3>Links</h3>
+<!-- External link -->
 <a href="http://google.de">Got ask Google</a>
+<!-- Internal link -->
 <a href="page2.html" target="_blank">Go to page 2</a>
+<!-- Internal link to the specified anchor on the top -->
 <a href="#bottomimage">Got to bottom image</a>
 
 <h3>iFrame</h3>
+<!-- iFrames embed content of other websites -->
+<!-- internal link to other local page. -->
 <iframe src="page2.html"></iframe>
+<!-- embed an external website-->
 <iframe width="100%" height="500px" src="http://www.dhbw-ravensburg.de"></iframe>
+<!-- embed a video -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vZRp_JvSYJg" frameborder="0" allowfullscreen></iframe>
 
 <h3>Images</h3>
-
+<!-- include a local image, alt displays an alternative if the browser cannot display image. -->
 <img alt="Alternativer Text" src="img.jpg" width="100%"/>
+<!-- include an external image -->
 <img alt="Ein anderes bild" height="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Arthur_Balfour%2C_photo_portrait_facing_left.jpg/800px-Arthur_Balfour%2C_photo_portrait_facing_left.jpg">
+<!-- another anchor for internal links to jump to this section of the page. -->
 <a name="bottomimage"></a>
 
 

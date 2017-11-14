@@ -8,7 +8,7 @@
 
 	<h1>Enter your flight data here</h1>
 	
-	<form id="enter_flight" method="POST" action="http://localhost:8080/api/flight">
+	<form id="enter_flight" method="POST" action="/api/flight">
 		<input type="text" name="flightId" placeholder="Flight Id"/> <br/>
 		<input type="text" name="destination" placeholder="Destination airport" /><br/>
 		<input type="text" name="origin" placeholder="Origin airport"/><br/>
@@ -19,6 +19,8 @@
 
 		<input type="submit" value="Absenden" />
 	</form>
+	
+	<iframe src="/api/flight"></iframe>
 
 </body>
 </html>
