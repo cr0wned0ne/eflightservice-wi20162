@@ -33,6 +33,13 @@ h2 {
 .rightDiv {
 	width:100px;
 	float:right;
-	background-color:green;
-	
+	background-color:green;	
+}
+
+#centerDiv {
+	width:500px;
+	height:200px;
+	background-color:black;
+	margin: auto;
+	border-radius:100px;
 }

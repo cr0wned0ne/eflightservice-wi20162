@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Flight Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="headerBar">
+		<h2><span class="white">{e}</span>FlightService v2</h2>
+		<p class="white">SwabianAir airlines</p>
+	</div>
+
+	<div id="contentDiv">
+		<h3 id="formHeader">Create new Flight</h3>
+		<p id="errorArea"></p>
+		<form id="enter_flight" method="POST" action="/api/flight"
+			target="_blank">
+			<label for="flightId">Flight Id</label> 
+			<input type="text" id="flightId" class="flightInput" required="required"
+				name="flightId" placeholder="XXXX" /> <br /> 
+				<label for="destination">Destination</label> 
+			    <select name="destination" class="flightInput" required="required">
+				 <option value="">Please select</option>
+				 <option value="STR">Stuttgart (STR)</option>
+				 <option value="FDH">Friedrichshafen (FDH)</option>
+				</select>
+				<label for="origin">Origin</label> 
+				<select name="origin" class="flightInput">
+				 <option value="">Please select</option>
+				 <option value="FDH">Friedrichshafen (FDH)</option>
+				 <option value="STR">Stuttgart (STR)</option>
+				</select>
+				<label for="startDate">StartTime</label> 
+				<input type="text" class="flightInput" name="startDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
+				<label for="endDate">Arrival time</label> 
+				<input type="text" class="flightInput" name="endDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
+				<input type="submit" class="flightButton" value="Save Data" id="sendFlightButton" />
+		</form>
+		
+		<button id="changeFlight" class="flightButton">Change selected flight</button>
+		<button id="createFlight" class="flightButton">Create new flight</button>
+		<button id="showJson">Hide Json</button>
+
+		<iframe id="jsonIFrame"src="/api/flight"></iframe>
+	</div>
+	<!-- The script tag defines a section of javascript -->
+	<script type="text/javascript">
+	
+	function sayHello() {
+		//define a variable with "var"
+		var greeting = 1;
+		//javascript is not strongly typed, so you can assign everything to a variable:
+		greeting = "Hello";
+		// you can also define arrays:
+		var myGreetings = new Array();
+		// push elements to it:
+		myGreetings.push(greeting);
+		myGreetings.push("Hi");
+		
+		// log stuff in the console, this can be used for error handling
+		console.log("Inital greeting: " + greeting);
+		
+		// repeat stuff with loops, for example for:
+		for (var i = 0; i < myGreetings.length; i++) {
+			// this loop goes over every element of our myGreetings array.
+			
+		   // program conditions using if-else blocks:
+			if (myGreetings[i] == "Hello") {
+				//access elements of an array with "[]", for example [0] returns the first, [1] the second and so on:
+				console.log("Greeting from the for loop: " + myGreetings[i]);
+			} else {
+				console.log("Also in the for loop: not an appropriate greeting: " + myGreetings[i])
+			}	
+		}
+		// while loops are also possible:
+		var i = 0;
+		while (i < myGreetings.length) {
+			console.log("Greeting from the while loop: " + myGreetings[i]);
+			i++;
+		}
+		
+		// all of this code is encapsuled in a function so we can control when to execute it.
+	};
+	// execute the above function with "()":
+	sayHello();
+	
+	// this is another way to create a function.
+	// this time we create a variable and say it is a function with the "function" keyword
+	var createPersonFunction = function() {
+		// we can create objects using the JSON syntax
+		var person = {
+				// simple key, value pairs:
+				name: "doe",
+				firstname: "john",
+				// more complex structures like nested objects:
+				adress: {
+					street: "Main street",
+					number: "1"
+				},
+				// arrays:
+				hobbies: [
+					"football", "music"
+				],
+				// even functions! Here we give the person object a the sayHello function we defined above:
+				sayHello : sayHello
+		};
+		console.log("We created a person:")
+		// we can access the attributes of an object like this:
+		console.log("persons firstname: " + person.name);
+		// or we can look at the whole object:
+		console.log(person);
+		// or call the function of an object:
+		console.log("the person just said hello! " + person.sayHello());
+	}
+	// execute the function defined above:
+	createPersonFunction();	
+	
+	// we can select every element of the html document using the document.getElementById function:
+    // here we also add a new function to the onclick event, this is triggered 
+    // if someone clicks the element (in this case the button):
+	document.getElementById("changeFlight").onclick= function(){
+		// we can change then the innerHTML of a selected document
+		document.getElementById("formHeader").innerHTML="Edit Flight";
+	};
+	// same here!
+	document.getElementById("createFlight").onclick= function(){
+		// change the h1 header:
+		document.getElementById("formHeader").innerHTML="Create new Flight";
+		// get all elements with a specified class and reset them to empty!
+		var flightInputElements = document.getElementsByClassName("flightInput");
+		for (var j = 0; j < flightInputElements.length; j++) {
+			flightInputElements[j].value = "";
+		}
+	};
+	
+	// we can react on events, here the onblur event, this is triggered if an element loses focus:
+	document.getElementById("flightId").onblur = function () {
+		if (document.getElementById("flightId").value.length < 4) {
+			document.getElementById("errorArea").innerHTML="Not a valid flight id, at least 4 characters!";
+		} else {
+			document.getElementById("errorArea").innerHTML="";
+		}
+	};
+	// onmouseover is another event, triggered when someone hovers the element:
+	document.getElementById("sendFlightButton").onmouseover = function() {
+		console.log("hovered!");
+		// we can also manipulate the style DOM element to change the styling of elements:
+		document.getElementById("sendFlightButton").style.backgroundColor = "rgb(212,212,212)";
+	};
+	// equivalent: onmouseout when leaving the element:
+	document.getElementById("sendFlightButton").onmouseout = function() {
+		document.getElementById("sendFlightButton").style.backgroundColor = "white";
+	};	
+	
+	document.getElementById("showJson").onclick = function() {
+		if (document.getElementById("jsonIFrame").style.display == "none") {
+			document.getElementById("showJson").innerHTML = "Hide Json";
+			document.getElementById("jsonIFrame").style.display = "";
+		} else {
+			document.getElementById("showJson").innerHTML = "Show Json";
+			document.getElementById("jsonIFrame").style.display ="none";
+		}
+	}
+	
+	</script>
+</body>
+</html>
