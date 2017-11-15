@@ -9,10 +9,23 @@
 	z-index:2;
 }
 
-#headerBar h1 {
+#headerBar h2 {
 	margin:0px;
+	color:#9AA2C1;
+	font-style:italic;
+	padding-top:5px;
+	padding-left:10px;
 }
 
+#headerBar p {
+	margin:0px;
+	font-size:0.8em;
+	padding-left:100px;
+}
+
+.white{
+	color:#f0f6fa;
+}
 
 #contentDiv {
 	margin:auto;
@@ -22,22 +35,53 @@
 	
 }
 
-/* Commentar */
+#formHeader{
+	margin-bottom:3px;
+	color:#9AA2C1;
+}
+
+#errorArea {
+	color:#cf534b;
+	font-size:0.8em;
+	height:0.8em;
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+
+/* Comment */
 label {
 	width:120px;
 	float:left;
+	font-size:0.8em;
+}
+
+.flightInput {
+	width:170px;
+	margin:3px;
 }
 
 input {
+	border-radius:3px;
+}
+
+#sendFlightButton {
 	width:170px;
+	margin-left:80px;
+}
+
+.flightButton {
+	
 }
 
 body {
 	margin:0px;	
 	font-family:helvetica;
+	color:#187976;
 }
 
-input {
+button {
+	width:170px;
 	margin:3px;
 }
 
