@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter flight</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="headerBar">
+<h1>eFlightService v2</h1>
+</div>
+
+<div id="contentDiv">
+	<h1>Enter your flight data here</h1>
+	
+	<form id="enter_flight" method="POST" action="/api/flight" target="_blank">
+		<label for="flightId">Flight Id</label>
+		<input type="text" name="flightId" placeholder="Flight Id"/> <br/>
+		<label for="destination">Destination</label>
+		<input type="text" name="destination" placeholder="Destination airport" /><br/>
+		<label for="origin">Origin</label>
+		<input type="text" name="origin" placeholder="Origin airport"/><br/>
+		<label for="startDate">Start Time</label>
+		<input type="text" name="startDate" placeholder="Start Date yyyy-MM-dd hh:mm"/><br/>
+		<label for="endDate">Arrival time</label>
+		<input type="text" name="endDate" placeholder="End Date yyyy-MM-dd hh:mm"/><br/>
+
+		<input type="submit" value="Absenden" />
+	</form>
+	
+	<iframe src="/api/flight"></iframe>
+</div>
+</body>
+</html>

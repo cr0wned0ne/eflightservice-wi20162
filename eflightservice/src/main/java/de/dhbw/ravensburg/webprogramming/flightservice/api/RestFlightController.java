@@ -53,8 +53,8 @@ public class RestFlightController {
 	public String postFlight(@RequestParam (value="flightId") String flightId, 
 			@RequestParam(value="destination") String destination, 
 			@RequestParam(value="origin") String origin, 
-			@RequestParam(value="destinationGate") String destinationGate,
-			@RequestParam(value="originGate") String originGate,
+			@RequestParam(value="destinationGate", required=false) String destinationGate,
+			@RequestParam(value="originGate", required=false) String originGate,
 			@RequestParam(value="startDate") @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date startDate,
 			@RequestParam(value="endDate") @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm") Date endDate){
 		// Just print the flightId to see something in the log.
@@ -71,7 +71,7 @@ public class RestFlightController {
 		// Save the entity to the database, 
 		// this will overwrite an existing entity with the same flightId.
 		flightRepo.save(flightEntity);
-		return "OK";
+		return "Ok";
 	}
 	
 	
