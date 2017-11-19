@@ -3,7 +3,7 @@
 #headerBar {
 	width:100%;
 	height:50px;
-	background-color:#d0ddf2;
+	background-color:#64ffa7;
 	position:fixed;
 	top:0px;
 	z-index:2;
@@ -11,7 +11,7 @@
 
 #headerBar h2 {
 	margin:0px;
-	color:#9AA2C1;
+	color:#939099;
 	font-style:italic;
 	padding-top:5px;
 	padding-left:10px;
@@ -24,7 +24,7 @@
 }
 
 .white{
-	color:#f0f6fa;
+	color:#f9fcf9;
 }
 
 #contentDiv {
@@ -35,7 +35,7 @@
 	
 }
 
-#formHeader{
+h3{
 	margin-bottom:3px;
 	color:#9AA2C1;
 }
