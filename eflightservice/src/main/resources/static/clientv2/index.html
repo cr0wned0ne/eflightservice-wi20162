@@ -13,9 +13,10 @@
 
 	<div id="contentDiv">
 		<h3 id="formHeader">Create new Flight</h3>
-		<p id="errorArea"></p>
+		<div>
 		<form id="enter_flight" method="POST" action="/api/flight"
 			target="_blank">
+			<p id="errorArea"></p>
 			<label for="flightId">Flight Id</label> 
 			<input type="text" id="flightId" class="flightInput" required="required"
 				name="flightId" placeholder="XXXX" /> <br /> 
@@ -40,9 +41,13 @@
 		
 		<button id="changeFlight" class="flightButton">Change selected flight</button>
 		<button id="createFlight" class="flightButton">Create new flight</button>
+		</div>
+		<h3>Flights</h3>
+		<div>
 		<button id="showJson">Hide Json</button>
 
 		<iframe id="jsonIFrame"src="/api/flight"></iframe>
+		</div>
 	</div>
 	<!-- The script tag defines a section of javascript -->
 	<script type="text/javascript">
