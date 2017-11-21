@@ -29,10 +29,14 @@
 
 #contentDiv {
 	margin:auto;
-	width:400px;
+	width:600px;
 	position:relative;
 	top:50px;
 	
+}
+
+#enter_flight {
+	width:400px;	
 }
 
 h3{

@@ -71,7 +71,7 @@ public class RestFlightController {
 		// Save the entity to the database, 
 		// this will overwrite an existing entity with the same flightId.
 		flightRepo.save(flightEntity);
-		return "Ok";
+		return "OK";
 	}
 	
 	

@@ -6,58 +6,68 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<!-- We want to have a nice header bar with the company name -->
 	<div id="headerBar">
 		<h2><span class="white">{e}</span>FlightService v2</h2>
 		<p class="white">SwabianAir airlines</p>
 	</div>
-
+	<!-- The content of the website goes here in the contenDiv -->
 	<div id="contentDiv">
+		<!-- first we want a form to create new flights: -->
 		<h3 id="formHeader">Create new Flight</h3>
 		<div>
-		<form id="enter_flight" method="POST" action="/api/flight"
-			target="_blank">
+		<form id="enter_flight" >
+			<!-- This empty paragraph will be used by javascript to add validation messages: -->
 			<p id="errorArea"></p>
+			<!-- for every attribute we want to set on a flight we have an input field and a label.
+			     labels are linked to inputs with the "for" attribute, set the "name" of the input there".
+			 -->
+			<!-- flight Id -->
 			<label for="flightId">Flight Id</label> 
 			<input type="text" id="flightId" class="flightInput" required="required"
 				name="flightId" placeholder="XXXX" /> <br /> 
-				<label for="destination">Destination</label> 
-			    <select name="destination" class="flightInput" required="required">
+			<!-- destination -->
+			<label for="destination">Destination</label> 
+			<select id="destination" name="destination" class="flightInput" required="required">
 				 <option value="">Please select</option>
 				 <option value="STR">Stuttgart (STR)</option>
 				 <option value="FDH">Friedrichshafen (FDH)</option>
-				</select>
-				<label for="origin">Origin</label> 
-				<select name="origin" class="flightInput">
+			</select>
+			<!-- origin -->
+			<label for="origin">Origin</label> 
+			<select id="origin" name="origin" class="flightInput">
 				 <option value="">Please select</option>
 				 <option value="FDH">Friedrichshafen (FDH)</option>
 				 <option value="STR">Stuttgart (STR)</option>
-				</select>
-				<label for="startDate">StartTime</label> 
-				<input type="text" class="flightInput" name="startDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
-				<label for="endDate">Arrival time</label> 
-				<input type="text" class="flightInput" name="endDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
-				<input type="submit" class="flightButton" value="Save Data" id="sendFlightButton" />
+			</select>
+			<!-- startDate -->
+			<label for="startDate">StartTime</label> 
+			<input id="startDate" type="text" class="flightInput" name="startDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
+			<!-- endDate -->
+			<label for="endDate">Arrival time</label> 
+			<input id="endDate" type="text" class="flightInput" name="endDate"placeholder="yyyy-MM-dd hh:mm" required="required"/><br /> 
+			<!-- And a button to submit the data in the end -->
+			<input type="submit" class="flightButton" value="Save Data" id="sendFlightButton" />
 		</form>
-		
+		<!-- some buttons to show some functions of javascript, they change the header and reset the fields -->
 		<button id="changeFlight" class="flightButton">Change selected flight</button>
 		<button id="createFlight" class="flightButton">Create new flight</button>
 		</div>
+		<!-- Here we want to display all saved flights -->
 		<h3>Flights</h3>
 		<div>
-		<button id="showJson">Hide Json</button>
-		<button id="refresh">Refresh</button>
-		<!-- <iframe id="jsonIFrame"src="/api/flight"></iframe> -->
-		<table id="flightsTable"></table>
-		
-		
+			<button id="refresh">Refresh</button>
+			<!-- <iframe id="jsonIFrame"src="/api/flight"></iframe> -->
+			<table id="flightsTable"><!-- empty table! here will will dynamically insert the flight data using javascript --></table>
 		</div>
 	</div>
 	<!-- The script tag defines a section of javascript -->
-	
+	<!-- here we include other javascript libraries -->
+	<!-- jQuery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="script2.js"></script>
+	<!-- my own Framework -->
+	<script type="text/javascript" src="myFramework.js"></script>
+	<!-- all custom code for my client -->
 	<script type="text/javascript" src="flightapp.js"></script>
-
-
 </body>
 </html>

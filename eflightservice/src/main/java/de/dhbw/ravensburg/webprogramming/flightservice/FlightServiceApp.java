@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
-public class App 
+public class FlightServiceApp 
 {
 	/**
 	 * Start the Spring Boot Application with the given args.
@@ -17,7 +17,7 @@ public class App
 	 */
     public static void main( String[] args )
     {
-    	SpringApplication.run(App.class, args);
-    	System.out.println("Hello World!");
+    	SpringApplication.run(FlightServiceApp.class, args);
+    	System.out.println("Flight Service up and running...");
     }
 }
