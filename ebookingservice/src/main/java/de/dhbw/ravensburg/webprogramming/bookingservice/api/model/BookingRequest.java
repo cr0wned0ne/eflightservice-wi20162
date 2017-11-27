@@ -8,6 +8,7 @@ public class BookingRequest {
 	private String flightId;
 	private String userId;
 	private String seatNr;
+	private String price;
 	private Boolean confirmed;
 	private Date created;
 	public String getBookingId() {
@@ -45,6 +46,12 @@ public class BookingRequest {
 	}
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
 	
