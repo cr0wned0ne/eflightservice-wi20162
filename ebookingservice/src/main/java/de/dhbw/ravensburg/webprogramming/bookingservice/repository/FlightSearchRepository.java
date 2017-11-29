@@ -9,5 +9,6 @@ import de.dhbw.ravensburg.webprogramming.bookingservice.model.FlightSearchEntity
 
 public interface FlightSearchRepository extends CrudRepository<FlightSearchEntity, String>{
 
+	
 	public List<String> findByDepartureDateBetween(Date from, Date to);
 }

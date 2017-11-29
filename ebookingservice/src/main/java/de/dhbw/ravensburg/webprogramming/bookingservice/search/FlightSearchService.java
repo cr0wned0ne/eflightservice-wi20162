@@ -7,6 +7,8 @@ import de.dhbw.ravensburg.webprogramming.bookingservice.api.model.FlightSearchRe
 
 public class FlightSearchService {
 
+	
+	
 	public List<FlightSearchResult> searchFlights(FlightSearchRequest request) {
 		return null;
 		
