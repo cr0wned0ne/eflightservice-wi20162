@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 
+import de.dhbw.ravensburg.webprogramming.bookingservice.adapter.flightservice.FlightServiceAdapter;
 import de.dhbw.ravensburg.webprogramming.bookingservice.api.model.BookingRequest;
 import de.dhbw.ravensburg.webprogramming.bookingservice.api.model.BookingResponse;
 import de.dhbw.ravensburg.webprogramming.bookingservice.model.BookingEntity;
@@ -34,6 +35,8 @@ public class RestBookingController {
 	 */
 	@Autowired
 	BookingRepository bookingRepo;
+	@Autowired
+	FlightServiceAdapter adapter;
 	
 
 
@@ -71,6 +74,7 @@ public class RestBookingController {
 	 */
 	@RequestMapping(path = "api/booking", method = RequestMethod.GET)
 	public List<BookingEntity> getAllBookings() {
+		adapter.loadAllFlightData();
 		return bookingRepo.findAll();
 	}
 	
