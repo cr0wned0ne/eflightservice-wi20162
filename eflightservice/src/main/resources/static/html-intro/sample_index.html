@@ -1,35 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Flight Management v1</title>
-<!-- first version of our client using plain HTML - not pretty but works :)-->
+	<meta charset="UTF-8">
+	<title>Hello World</title>
 </head>
 <body>
-	<h1>Enter your flight data here</h1>
-	<!-- We can use the form to post data! 
-	Specify the "action" and "method" to post data to our endpoint 
-	(if no method is defined, GET is default) -->
-	<form id="enter_flight" method="POST" action="/api/flight">
-		<!-- For every flight attribute we have a input field 
-		It is important that every field has a name, this will be the name of the
-		request parameter, send with the HTTP request.-->
-		<input type="text" name="flightId" placeholder="Flight Id"/> <br/>
-		<input type="text" name="destination" placeholder="Destination airport" /><br/>
-		<input type="text" name="origin" placeholder="Origin airport"/><br/>
-		<input type="text" name="destinationGate" placeholder="Destination Gate"/><br/>
-		<input type="text" name="originGate" placeholder="Origin Gate"/><br/>
-		<input type="text" name="startDate" placeholder="Start Date yyyy-MM-dd hh:mm"/><br/>
-		<input type="text" name="endDate" placeholder="End Date yyyy-MM-dd hh:mm"/><br/>
-		<!-- With this button we send the data -->
-		<input type="submit" value="Absenden" />
-	</form>
-	<!-- To simply get our flight data, we can use an Iframe.
-	This sends a HTTP GET request to the /api/flight endpoint which will then return 
-	all flights in JSON syntax. -->
-	<iframe src="/api/flight"></iframe>
 
-<<<<<<< HEAD
 <!-- This is a comment -->
 <a name="top"></a>
 <h1>Heading 1</h1>
@@ -39,8 +15,6 @@
 Hello <u>World!</u> <br/>
 And by!
 </p>
-
-<p><a href="enter_flight.html" target="_blank">Flug eingeben</a></p>
 
 <p>
 Hello <b>World!</b> <br/>
@@ -90,7 +64,5 @@ Todo List
 
 
 	
-=======
->>>>>>> a045bcad5c5bd5555980501ee5d8683bcdc71441
 </body>
 </html>

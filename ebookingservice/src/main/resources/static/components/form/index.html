@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" ng-controller="mainController">
+		<div class="row">
+			<div class="col-md-12"></div>
+		</div>
+		<div class="row">
+			<h1>The greeting is:  {{greeting}}</h1>
+			
+			<div class=" col-md-6">
+				<div class="form-group">
+					<label for="username" ng-bind="greeting">Username</label> 
+					<input type="text" name="username" class="form-control" ng-model="greeting" />
+
+				</div>
+				
+				<div class="form-group">
+					<label for="username">Password</label> 
+					<input type="text" name="username" class="form-control" ng-model="password" />
+
+				</div>
+				<div class="form-group">
+					<label for="date">Date</label> <input type="date" name="date"
+						class="form-control" />
+				</div>
+
+				<button type="submit" class="btn btn-success" ng-click="sayHello()">Send</button>
+
+			</div>
+			<div class="red col-md-6">
+				<table class="table">
+				<tr><th>flight id</th><th>destination</th></tr>
+				<tr ng-repeat="flight in flights" ng-if="checkVisibility()"><td>{{flight.flightId}}</td><td>{{flight.destination}}</td></tr>
+				</table>
+			
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="red col-md-4"></div>
+			<div class="red col-md-4"></div>
+			<div class="red col-md-4"></div>
+		</div>
+
+
+	</div>
+</body>
+</html>

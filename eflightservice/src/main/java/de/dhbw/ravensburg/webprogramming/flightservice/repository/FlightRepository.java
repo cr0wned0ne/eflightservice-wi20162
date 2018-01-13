@@ -8,6 +8,9 @@ import de.dhbw.ravensburg.webprogramming.flightservice.model.FlightEntity;
 
 /**
  * Repository Service for CRUD operations on {@link FlightEntity}.
+ * It extends a Spring Data Repository Interface that provides basic methods for
+ * accessing data out of the box.
+ * The default location to check for the database is localhost.
  *
  */
 public interface FlightRepository extends Repository<FlightEntity, String>{

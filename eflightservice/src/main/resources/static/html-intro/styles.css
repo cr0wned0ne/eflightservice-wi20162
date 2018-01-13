@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color:#A9F5F2;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+h2 {
+	color:green;
+}
+.blueParagraph {
+	color:blue;
+
+}
+
+.redParagraph {
+	color:red;
+}
+#yellowParagraph{
+	color:yellow;
+}
+
+.boldText {
+	font-weight:bold;
+}
+
+.leftDiv {
+	width:100px;
+	float:left;
+}
+
+.rightDiv {
+	width:100px;
+	float:right;
+	background-color:green;	
+}
+
+#centerDiv {
+	width:500px;
+	height:200px;
+	background-color:black;
+	margin: auto;
+	border-radius:100px;
+}
